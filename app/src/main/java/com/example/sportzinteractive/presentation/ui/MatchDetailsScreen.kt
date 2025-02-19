@@ -55,6 +55,7 @@ fun MatchDetailsScreen(navController: NavController, viewModel: MatchViewModel= 
                 }
             }
             is ApiState.Error -> Text(text = (matchDetails as ApiState.Error).message)
+            else -> {}
         }
     }
 }

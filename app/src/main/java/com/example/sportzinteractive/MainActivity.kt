@@ -1,6 +1,7 @@
 package com.example.sportzinteractive
 
 import SquadScreen
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent

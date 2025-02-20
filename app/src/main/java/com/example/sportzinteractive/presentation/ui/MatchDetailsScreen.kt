@@ -44,7 +44,9 @@ fun MatchDetailsScreen(navController: NavController, viewModel: MatchViewModel= 
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Log.d("matchData",match.toString())
-                    Text(text = "${match.matchDetail.teamHome} vs ${match.matchDetail.teamAway}",
+                    val teamHome=match.teams.filterKeys { it.startsWith(match.matchDetail.teamHome.toString()) }.values
+                    val teamAway=match.teams.filterKeys { it.startsWith(match.matchDetail.teamAway.toString()) }.values
+                    Text(text = "${teamHome.first().nameFull} vs ${teamAway.first().nameFull}",
                         style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                     Text(text = "Date: ${match.matchDetail.match.date}")
                     Text(text = "Venue: ${match.matchDetail.venue.name}")
